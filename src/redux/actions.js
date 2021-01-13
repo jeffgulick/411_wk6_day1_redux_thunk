@@ -28,17 +28,9 @@ export const fetchMakes = () => {
         }
 }
 
-// export const fetchMakes = () => {
-//     return (dispatch) => {
-//         fetch(url)
-//             .then(res => res.json())
-//             .then(response => {
-//                 console.log(response)
-//                 const action = {
-//                     type: 'FETCH_MAKES',
-//                     value: response.Results
-//                 }
-//                 dispatch(action)
-//             })
-//     }
-// }
+export const deleteMakes = (index) => {
+    return {
+        type: 'DELETE_MAKES',
+        value: index
+    }
+}

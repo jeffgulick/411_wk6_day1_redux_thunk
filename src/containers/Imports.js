@@ -1,16 +1,18 @@
 import { connect } from 'react-redux';
 import imports from '../components/Imports';
-import { fetchMakes } from '../redux/actions'
+import { fetchMakes, deleteMakes } from '../redux/actions';
+
 
 const mapStateToProps = (state) => {
     return {
         makes: state.makes
     }
 }
-const mapDispatcToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch) => {
     return {
-        fetchMakes: ()=> dispatch(fetchMakes())
+        fetchMakes: ()=> dispatch(fetchMakes()),
+        deleteMakes: (index) => dispatch(deleteMakes(index))
     }
 }
 
-export default connect(mapStateToProps, mapDispatcToProps)(imports)
+export default connect(mapStateToProps, mapDispatchToProps)(imports)

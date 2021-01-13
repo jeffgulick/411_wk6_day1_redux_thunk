@@ -19,8 +19,13 @@ const makes = (state = [], action) => {
     switch(action.type) {
         case 'FETCH_MAKES':
             return action.value
-        default:
-            return state
+        case 'DELETE_MAKES':
+            const currentMakes = [ ...state ];
+            currentMakes.splice(action.value, 1);
+            return currentMakes;
+            default:
+                return state
+            
     }
 }
 export default combineReducers({ user, cars, makes })
